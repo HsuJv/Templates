@@ -1,4 +1,4 @@
-# A Templates for Actix Web & Yew Combination
+# A Tiny Template for Actix Web & Yew Combination
 
 ## Dependencies
 
