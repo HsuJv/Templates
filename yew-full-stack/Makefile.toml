@@ -1,0 +1,20 @@
+[tasks.install-debug]
+dependencies = ["build-debug", "member_flow"]
+
+[tasks.install-release]
+dependencies = ["build-release", "member_flow"]
+
+[tasks.member_flow]
+run_task = { name = "member_flow", fork = true, parallel = true}
+
+[env]
+INSTALL_PATH= "${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/build"
+
+# this tells cargo-make that this directory acts as a workspace root
+CARGO_MAKE_WORKSPACE_EMULATION = true
+
+# a list of crate members. since we do not have a Cargo.toml, we will need to specify this in here.
+CARGO_MAKE_CRATE_WORKSPACE_MEMBERS = [
+  "ui",
+  "server",
+]

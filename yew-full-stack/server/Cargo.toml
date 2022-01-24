@@ -1,0 +1,35 @@
+[package]
+authors = [
+    "Jovi Hsu <jv.hsu@outlook.com>"
+]
+categories = ["actix-web", "web-programming"]
+description = ""
+edition = "2021"
+keywords = ["web"]
+license = "BSD"
+name = "server"
+version = "0.1.0"
+repository = ""
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-session = "0.5.0-beta.3"
+actix-web = "4.0.0-beta.21"
+actix-files = "0.6.0-beta.8"
+
+# misc
+rand = "0.8"
+femme = "1.3"
+log = "0.4"
+async-log = "2.0.0"
+
+[profile.dev]
+panic = "unwind"
+opt-level = 0
+
+[profile.release]
+panic = 'abort'
+codegen-units = 1
+opt-level = 's'
+lto = true
